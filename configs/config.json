@@ -1,0 +1,25 @@
+{
+    "project": {
+        "name": "AI Food Quality Platform",
+        "version": "0.1.0"
+    },
+
+    "rgb": {
+        "image_size": 224,
+        "batch_size": 32,
+        "epochs": 20,
+        "model": "MobileNetV2"
+    },
+
+    "hyperspectral": {
+        "pca_components": 25,
+        "classifier": "RandomForest"
+    },
+
+    "paths": {
+        "rgb_dataset": "datasets/raw/rgb",
+        "hyperspectral_dataset": "datasets/raw/hyperspectral",
+        "models": "models",
+        "results": "results"
+    }
+}
