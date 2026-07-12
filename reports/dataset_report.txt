@@ -1,0 +1,270 @@
+==========================================================================================
+AI FOOD QUALITY PLATFORM
+RGB DATASET ANALYSIS REPORT
+==========================================================================================
+Generated On : 12-07-2026 08:29:54
+
+------------------------------------------------------------------------------------------
+Food Category : Apple
+------------------------------------------------------------------------------------------
+Fresh Images      : 2438
+Rotten Images     : 2925
+Total Images      : 5363
+Fresh Percentage  : 45.46%
+Rotten Percentage : 54.54%
+Imbalance Ratio   : 1.2
+Dataset Status    : Excellent
+Health Score      : 77/100
+Dataset Grade    : B
+
+Resolution Statistics
+Average Resolution : 543 x 510
+Minimum Resolution : 100 x 100
+Maximum Resolution : 4160 x 3120
+
+Image Formats
+  .JPEG   : 2
+  .JPG    : 899
+  .PNG    : 4462
+
+Detected Issues
+Duplicate Groups : 446
+Corrupted Images : 0
+Invalid Files    : 5
+Blurry Images    : 1307
+Dark Images      : 0
+Bright Images    : 372
+Tiny Images      : 0
+Large Images     : 194
+
+==========================================================================================
+AI RECOMMENDATIONS
+==========================================================================================
+
+HIGH PRIORITY
+-------------
+• [Duplicate Images] Remove 446 duplicate image groups.
+• [Invalid Files] Remove 5 invalid files.
+
+MEDIUM PRIORITY
+---------------
+• [Blurry Images] Review 1307 blurry images.
+
+LOW PRIORITY
+------------
+• [Large Images] Resize large images before training.
+• [Bright Images] Review 372 overexposed images.
+• [Image Size] Resize images to 224×224.
+
+
+------------------------------------------------------------------------------------------
+Food Category : Banana
+------------------------------------------------------------------------------------------
+Fresh Images      : 1999
+Rotten Images     : 2797
+Total Images      : 4796
+Fresh Percentage  : 41.68%
+Rotten Percentage : 58.32%
+Imbalance Ratio   : 1.4
+Dataset Status    : Excellent
+Health Score      : 80/100
+Dataset Grade    : B
+
+Resolution Statistics
+Average Resolution : 596 x 466
+Minimum Resolution : 174 x 146
+Maximum Resolution : 3424 x 3842
+
+Image Formats
+  .JPEG   : 2
+  .JPG    : 1371
+  .PNG    : 3423
+
+Detected Issues
+Duplicate Groups : 194
+Corrupted Images : 0
+Invalid Files    : 4
+Blurry Images    : 947
+Dark Images      : 28
+Bright Images    : 491
+Tiny Images      : 0
+Large Images     : 144
+
+==========================================================================================
+AI RECOMMENDATIONS
+==========================================================================================
+
+HIGH PRIORITY
+-------------
+• [Duplicate Images] Remove 194 duplicate image groups.
+• [Invalid Files] Remove 4 invalid files.
+
+MEDIUM PRIORITY
+---------------
+• [Blurry Images] Review 947 blurry images.
+
+LOW PRIORITY
+------------
+• [Large Images] Resize large images before training.
+• [Dark Images] Review 28 dark images.
+• [Bright Images] Review 491 overexposed images.
+• [Image Size] Resize images to 224×224.
+
+
+------------------------------------------------------------------------------------------
+Food Category : Strawberry
+------------------------------------------------------------------------------------------
+Fresh Images      : 1603
+Rotten Images     : 1596
+Total Images      : 3199
+Fresh Percentage  : 50.11%
+Rotten Percentage : 49.89%
+Imbalance Ratio   : 1.0
+Dataset Status    : Excellent
+Health Score      : 70/100
+Dataset Grade    : B
+
+Resolution Statistics
+Average Resolution : 508 x 535
+Minimum Resolution : 100 x 100
+Maximum Resolution : 5312 x 2988
+
+Image Formats
+  .JPEG   : 25
+  .JPG    : 3173
+  .PNG    : 1
+
+Detected Issues
+Duplicate Groups : 654
+Corrupted Images : 0
+Invalid Files    : 0
+Blurry Images    : 1256
+Dark Images      : 0
+Bright Images    : 31
+Tiny Images      : 0
+Large Images     : 150
+
+==========================================================================================
+AI RECOMMENDATIONS
+==========================================================================================
+
+HIGH PRIORITY
+-------------
+• [Duplicate Images] Remove 654 duplicate image groups.
+
+MEDIUM PRIORITY
+---------------
+• [Blurry Images] Review 1256 blurry images.
+
+LOW PRIORITY
+------------
+• [Large Images] Resize large images before training.
+• [Bright Images] Review 31 overexposed images.
+• [Image Size] Resize images to 224×224.
+
+
+------------------------------------------------------------------------------------------
+Food Category : Tomato
+------------------------------------------------------------------------------------------
+Fresh Images      : 604
+Rotten Images     : 595
+Total Images      : 1199
+Fresh Percentage  : 50.38%
+Rotten Percentage : 49.62%
+Imbalance Ratio   : 1.02
+Dataset Status    : Excellent
+Health Score      : 77/100
+Dataset Grade    : B
+
+Resolution Statistics
+Average Resolution : 434 x 366
+Minimum Resolution : 80 x 100
+Maximum Resolution : 4056 x 3040
+
+Image Formats
+  .JPEG   : 14
+  .JPG    : 862
+  .PNG    : 323
+
+Detected Issues
+Duplicate Groups : 76
+Corrupted Images : 0
+Invalid Files    : 1
+Blurry Images    : 294
+Dark Images      : 23
+Bright Images    : 31
+Tiny Images      : 9
+Large Images     : 17
+
+==========================================================================================
+AI RECOMMENDATIONS
+==========================================================================================
+
+HIGH PRIORITY
+-------------
+• [Duplicate Images] Remove 76 duplicate image groups.
+• [Invalid Files] Remove 1 invalid files.
+
+MEDIUM PRIORITY
+---------------
+• [Blurry Images] Review 294 blurry images.
+• [Tiny Images] Replace 9 tiny images.
+
+LOW PRIORITY
+------------
+• [Large Images] Resize large images before training.
+• [Dark Images] Review 23 dark images.
+• [Bright Images] Review 31 overexposed images.
+• [Image Size] Resize images to 224×224.
+
+
+==========================================================================================
+OVERALL DATASET SUMMARY
+==========================================================================================
+Fresh Images      : 6644
+Rotten Images     : 7913
+Total Images      : 14557
+Fresh Percentage  : 45.64%
+Rotten Percentage : 54.36%
+
+Resolution Statistics
+Average Resolution : 544 x 489
+Minimum Resolution : 80 x 100
+Maximum Resolution : 5312 x 2988
+
+Detected Issues
+Duplicate Groups : 1370
+Corrupted Images : 0
+Invalid Files    : 10
+Blurry Images    : 3804
+Dark Images      : 51
+Bright Images    : 925
+Tiny Images      : 9
+Large Images     : 505
+
+==========================================================================================
+AI RECOMMENDATIONS
+==========================================================================================
+
+HIGH PRIORITY
+-------------
+• [Duplicate Images] Dataset contains 1370 duplicate image groups.
+• [Invalid Files] Remove 10 invalid files.
+
+MEDIUM PRIORITY
+---------------
+• [Blurry Images] Review 3804 blurry images.
+• [Tiny Images] Replace 9 tiny images.
+
+LOW PRIORITY
+------------
+• [Large Images] Resize large images before preprocessing.
+• [Dark Images] Improve illumination of dark images.
+• [Bright Images] Review overexposed images.
+• [Training] Recommended image size: 224×224.
+• [Dataset] Dataset is ready for preprocessing after the above issues are resolved.
+
+==========================================================================================
+Dataset analysis completed successfully.
+Report saved to : D:\Projects\AI-Food-Quality-Platform\reports\dataset_report.txt
+==========================================================================================
