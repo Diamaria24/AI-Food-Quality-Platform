@@ -1,24 +1,30 @@
-🍎 AI Food Quality Platform
+# 🍎 AI Food Quality Platform
 
-An AI-powered food quality assessment platform that utilizes Deep Learning, Computer Vision, and Hyperspectral Imaging concepts to perform freshness estimation, spoilage detection, and early mold identification.
+An AI-powered platform for food quality assessment using **Deep Learning, Computer Vision, and Hyperspectral Imaging** for freshness estimation, spoilage detection, and early mold identification.
 
-📖 Project Overview
+---
+
+## 📖 Project Overview
 
 Food spoilage contributes significantly to global food waste and economic losses. This project aims to develop an intelligent and explainable AI system capable of automatically evaluating food quality using image-based analysis.
 
-The platform currently focuses on RGB image analysis and is designed for future integration with hyperspectral sensors for early-stage mold detection.
+The platform currently focuses on **RGB image analysis** and is designed for future integration with **hyperspectral sensors** for early-stage mold detection.
 
-🎯 Objectives
+---
 
-Automatic food freshness assessment
-Detection of defective and spoiled produce
-Real-time prediction through a web application
-Explainable AI using GradCAM visualizations
-Future support for hyperspectral imaging and low-cost sensors
+## 🎯 Objectives
 
-🚀 Features
+- Automatic food freshness assessment
+- Detection of defective and spoiled produce
+- Real-time prediction through a web application
+- Explainable AI using GradCAM visualizations
+- Future support for hyperspectral imaging and low-cost sensors
 
-RGB Analysis Module
+---
+
+# 🚀 Features
+
+## RGB Analysis Module
 
 ✅ Multi-class Fruit Classification
 
@@ -32,7 +38,9 @@ RGB Analysis Module
 
 ✅ External Dataset Validation
 
-Future Hyperspectral Module
+---
+
+## Future Hyperspectral Module
 
 🔄 Spectral Data Processing
 
@@ -44,42 +52,54 @@ Future Hyperspectral Module
 
 🔄 Sensor Integration (AS7341)
 
-🧠 Supported Classes
+---
 
-The RGB module currently supports 8 classes:
+# 🧠 Supported Classes
 
-Apple Fresh
-Apple Rotten
-Banana Fresh
-Banana Rotten
-Strawberry Fresh
-Strawberry Rotten
-Tomato Fresh
-Tomato Rotten
+The RGB module currently supports **8 classes**:
 
-📊 Dataset Information
+- Apple Fresh
+- Apple Rotten
+- Banana Fresh
+- Banana Rotten
+- Strawberry Fresh
+- Strawberry Rotten
+- Tomato Fresh
+- Tomato Rotten
 
-Final RGB Dataset
+---
 
-Class	Images
-Apple Fresh	2438
-Apple Rotten	2925
-Banana Fresh	1999
-Banana Rotten	2797
-Strawberry Fresh	1603
-Strawberry Rotten	1596
-Tomato Fresh	604
-Tomato Rotten	595
-Total Images
-14,557 Images
-Dataset Split
-Set	Images	Percentage
-Training	9,934	69.55%
-Validation	2,176	15.23%
-Testing	2,174	15.22%
+# 📊 Dataset Information
 
-🏗 System Architecture
+## Final RGB Dataset
 
+| Class | Images |
+|--------|---------|
+| Apple Fresh | 2438 |
+| Apple Rotten | 2925 |
+| Banana Fresh | 1999 |
+| Banana Rotten | 2797 |
+| Strawberry Fresh | 1603 |
+| Strawberry Rotten | 1596 |
+| Tomato Fresh | 604 |
+| Tomato Rotten | 595 |
+| **Total Images** | **14,557** |
+
+---
+
+## Dataset Split
+
+| Set | Images | Percentage |
+|------|---------|------------|
+| Training | 9,934 | 69.55% |
+| Validation | 2,176 | 15.23% |
+| Testing | 2,174 | 15.22% |
+
+---
+
+# 🏗 System Architecture
+
+```text
 Input Image
       ↓
 Preprocessing
@@ -91,34 +111,46 @@ Prediction
 GradCAM Explainability
       ↓
 Streamlit Deployment
+```
 
-🛠 Tech Stack
+---
 
-Programming
-Python 3.11
-Deep Learning
-TensorFlow
-Keras
-Scikit-Learn
-Computer Vision
-OpenCV
-Pillow
-Hyperspectral Imaging
-Spectral Python (SPy)
-Visualization
-Matplotlib
-Plotly
-Seaborn
-Explainable AI
-GradCAM
-SHAP (Planned)
-Web Deployment
-Streamlit
+# 🛠 Tech Stack
 
-📂 Project Structure
+## Programming
+- Python 3.11
 
+## Deep Learning
+- TensorFlow
+- Keras
+- Scikit-Learn
+
+## Computer Vision
+- OpenCV
+- Pillow
+
+## Hyperspectral Imaging
+- Spectral Python (SPy)
+
+## Visualization
+- Matplotlib
+- Plotly
+- Seaborn
+
+## Explainable AI
+- GradCAM
+- SHAP (Planned)
+
+## Web Deployment
+- Streamlit
+
+---
+
+# 📂 Project Structure
+
+```text
 AI-Food-Quality-Platform/
-
+│
 ├── app.py
 ├── datasets/
 ├── models/
@@ -137,46 +169,73 @@ AI-Food-Quality-Platform/
 ├── tests/
 ├── configs/
 └── requirements.txt
+```
 
-📈 Model Performance
+---
 
-Baseline CNN
-Metric	Value
-Test Accuracy	96.78%
-Weighted F1	0.97
-External Accuracy	88.06%
-MobileNetV2 (Final Model)
-Metric	Value
-Test Accuracy	99.17%
-Validation Accuracy	98.76%
-Test Loss	0.0291
-Weighted F1	0.99
-External Accuracy	88.71%
+# 📈 Model Performance
 
-📌 Key Findings
+## Baseline CNN
 
-✅ MobileNetV2 outperformed the custom CNN architecture.
+| Metric | Value |
+|---------|--------|
+| Test Accuracy | 96.78% |
+| Weighted F1 Score | 0.97 |
+| External Accuracy | 88.06% |
 
-✅ Transfer learning improved performance by approximately 2.39%.
+---
 
-✅ Near-perfect ROC-AUC values (0.999–1.000) were achieved.
+## MobileNetV2 (Final Model)
+
+| Metric | Value |
+|---------|--------|
+| Test Accuracy | 99.17% |
+| Validation Accuracy | 98.76% |
+| Test Loss | 0.0291 |
+| Weighted F1 Score | 0.99 |
+| External Accuracy | 88.71% |
+
+---
+
+## Performance Comparison
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|--------|-----------|------------|---------|-----------|
+| Baseline CNN | 96.78% | 96.90% | 96.80% | 97.00% |
+| MobileNetV2 | 99.17% | 98.90% | 99.20% | 99.00% |
+
+---
+
+# 🔥 Key Findings
+
+✅ MobileNetV2 significantly outperformed the custom CNN architecture.
+
+✅ Transfer Learning improved performance by approximately **2.39%**.
+
+✅ Near-perfect ROC-AUC values (**0.999 – 1.000**) were achieved.
 
 ✅ External testing revealed domain shift, particularly for tomato classes.
 
-🔥 Explainable AI
+✅ GradCAM improved interpretability and transparency of predictions.
 
-The project incorporates GradCAM visualizations to interpret model decisions.
+---
+
+# 🧠 Explainable AI
+
+The project incorporates **GradCAM visualizations** to interpret model decisions.
 
 Features:
 
-Heatmap generation
-Identification of defective regions
-Increased model transparency
-Better trust and interpretability
+- Heatmap generation
+- Identification of defective regions
+- Increased model transparency
+- Better trust and interpretability
 
-🌐 Web Application
+---
 
-The platform includes a real-time Streamlit application that allows users to:
+# 🌐 Streamlit Web Application
+
+The deployed web application allows users to:
 
 ✅ Upload fruit images
 
@@ -186,69 +245,129 @@ The platform includes a real-time Streamlit application that allows users to:
 
 ✅ Visualize GradCAM explanations
 
-📷 Sample Outputs
+---
 
-Confusion Matrix
-ROC Curves
-Accuracy/Loss Curves
-Sample Predictions
-GradCAM Heatmaps
-Streamlit Interface
+# 📷 Results & Visualizations
 
-🚀 Future Work
+- Dataset Distribution Graph
+- Dataset Splitting Strategy
+- CNN Architecture Diagram
+- MobileNetV2 Architecture
+- Accuracy/Loss Curves
+- Confusion Matrices
+- ROC Curves
+- Sample Predictions
+- GradCAM Heatmaps
+- Streamlit Screenshots
 
-Hyperspectral imaging integration
-AS7341 sensor integration
-Shelf-life prediction
-Recommendation engine
-Cloud deployment
-Mobile application
-Edge AI deployment
+---
 
-📌 Current Development Status
+## Sample Outputs
 
-Module	Status
-Research & Planning	✅
-Dataset Preparation	✅
-Exploratory Data Analysis	✅
-Baseline CNN	✅
-MobileNetV2	✅
-Explainable AI	✅
-Streamlit Deployment	✅
-External Validation	✅
-Hyperspectral Module	🔄
-Hardware Integration	🔄
+### Overall System Architecture
 
-👩‍💻 Authors
+![Architecture](outputs/plots/system_architecture.png)
 
-Dia Maria
-Fidha Shaji 
-SreeLakshmi 
-Nayana James
+### MobileNetV2 Confusion Matrix
 
-📜 License
+![Confusion Matrix](outputs/plots/mobilenet_confusion_matrix.png)
+
+### GradCAM Visualization
+
+![GradCAM](outputs/plots/gradcam_tomato_rotten.png)
+
+### Streamlit Application
+
+![Streamlit](outputs/screenshots/app.png)
+
+---
+
+# 🚀 Future Work
+
+- Hyperspectral Imaging Module
+- AS7341 Sensor Integration
+- Shelf-Life Prediction
+- Storage Recommendation Engine
+- Cloud Deployment
+- Mobile Application
+- Edge AI Deployment
+
+---
+
+# 📌 Development Status
+
+| Module | Status |
+|---------|---------|
+| Research & Planning | ✅ Completed |
+| Environment Setup | ✅ Completed |
+| Dataset Collection | ✅ Completed |
+| Data Preprocessing | ✅ Completed |
+| Exploratory Data Analysis | ✅ Completed |
+| Baseline CNN | ✅ Completed |
+| MobileNetV2 | ✅ Completed |
+| Explainable AI | ✅ Completed |
+| Streamlit Deployment | ✅ Completed |
+| External Validation | ✅ Completed |
+| Hyperspectral Module | 🔄 In Progress |
+| Hardware Integration | 🔄 Planned |
+
+---
+
+# ⚙ Installation
+
+```bash
+git clone https://github.com/yourusername/AI-Food-Quality-Platform.git
+
+cd AI-Food-Quality-Platform
+
+pip install -r requirements.txt
+```
+
+---
+
+# ▶ Running the Application
+
+```bash
+streamlit run app.py
+```
+
+---
+
+# 👩‍💻 Authors
+
+- Dia Maria
+- Fidha Shaji
+- Sreelakshmi
+- Nayana James
+
+---
+
+# 📜 License
 
 This project is developed for:
 
-Academic Research
-Educational Purposes
-Software Engineering Project Work
+- Academic Research
+- Educational Purposes
+- Software Engineering Project Work
 
-⭐ Citation
+---
 
-If you use this project in your research:
+# ⭐ Citation
 
+```bibtex
 @project{AIFoodQualityPlatform,
   title={AI Food Quality Platform using Deep Learning and Hyperspectral Imaging},
   author={Dia Maria et al.},
   year={2026}
 }
+```
 
-## Screenshots
-1. Architecture Diagram
-<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/93cc852f-b11b-4b73-aba3-bf18f05e5cbf" />
+---
 
+# ❤️ Acknowledgements
 
-![Streamlit](outputs/screenshots/app.png)
-
-This makes the GitHub repository look much more professional.
+- TensorFlow Team
+- OpenCV Community
+- Kaggle Datasets
+- Spectral Python Developers
+- Streamlit Team
