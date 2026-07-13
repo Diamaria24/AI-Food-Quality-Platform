@@ -340,7 +340,7 @@ This project is developed for:
 
 - Academic Research
 - Educational Purposes
-- Software Engineering Project Work
+- AI - DS Project Work
 
 ---
 
