@@ -266,19 +266,11 @@ The deployed web application allows users to:
 
 ### Overall System Architecture
 
-![Architecture](outputs/plots/system_architecture.png)
+<img width="1536" height="1024" alt="ChatGPT Image Jul 13, 2026, 10_15_52 PM" src="https://github.com/user-attachments/assets/99c14e6c-8121-40a4-a8b1-675c904ef317" />
 
 ### MobileNetV2 Confusion Matrix
 
 ![Confusion Matrix](outputs/plots/mobilenet_confusion_matrix.png)
-
-### GradCAM Visualization
-
-![GradCAM](outputs/plots/gradcam_tomato_rotten.png)
-
-### Streamlit Application
-
-![Streamlit](outputs/screenshots/app.png)
 
 ---
 
