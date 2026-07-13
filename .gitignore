@@ -68,6 +68,8 @@ models/**/*.onnx
 # ==========================================
 datasets/raw/
 datasets/processed/
+datasets/multiclass/
+datasets/external/
 
 # Keep folder structure
 !datasets/raw/.gitkeep
