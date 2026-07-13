@@ -69,6 +69,8 @@ models/**/*.onnx
 datasets/raw/
 datasets/processed/
 datasets/multiclass/
+datasets/resized/
+datasets/resized_external/
 datasets/external/
 
 # Keep folder structure
