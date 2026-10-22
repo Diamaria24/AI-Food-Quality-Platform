@@ -101,3 +101,44 @@ experiments/output/
 # TensorBoard
 # ==========================================
 logs/
+
+
+# ==========================================
+# SpectraGuard - Generated Outputs
+# ==========================================
+outputs/
+
+# ==========================================
+# Frontend Dependencies and Build Files
+# ==========================================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# ==========================================
+# Trained Model Artifacts
+# ==========================================
+models/trained/
+
+# ==========================================
+# Local HSI Uploads and Temporary Files
+# ==========================================
+*.bil
+*.bip
+*.bsq
+*.raw
+*.dat
+*.hdr
+
+# ==========================================
+# SpectraGuard - Experiment Artifacts
+# ==========================================
+experiments/rgb_mold/mobilemold_experiment1/
+
+# ==========================================
+# Frontend Backup Files
+# ==========================================
+frontend/src/App.backup*.txt
