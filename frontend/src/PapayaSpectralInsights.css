@@ -1,0 +1,45 @@
+﻿.papaya-spectral-insights {
+  background-color: #f8fafc;
+  color: #243449;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.papaya-spectral-insights summary {
+  color: #102a43;
+  font-size: 18px !important;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.papaya-spectral-insights h4 {
+  color: #102a43;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.5;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.papaya-spectral-insights p {
+  color: #334155;
+  font-size: 17px;
+  line-height: 1.85;
+  margin-top: 10px;
+  margin-bottom: 16px;
+}
+
+.papaya-spectral-insights strong {
+  color: #102a43;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .papaya-spectral-insights p {
+    font-size: 16px;
+  }
+
+  .papaya-spectral-insights h4 {
+    font-size: 18px;
+  }
+}

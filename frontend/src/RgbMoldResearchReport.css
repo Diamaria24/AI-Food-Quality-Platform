@@ -1,0 +1,162 @@
+.mold-research-report {
+  margin-top: 28px;
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #dce5ec;
+  border-radius: 18px;
+  color: #253447;
+  line-height: 1.7;
+}
+
+.mrr-header {
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e3eaf0;
+}
+
+.mrr-eyebrow {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #527c93;
+}
+
+.mrr-header h2 {
+  margin: 8px 0;
+  font-size: 25px;
+  color: #172e42;
+}
+
+.mrr-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.mrr-section {
+  padding: 22px 0;
+  border-bottom: 1px solid #e8edf2;
+}
+
+.mrr-section h3 {
+  margin: 0 0 16px;
+  color: #18364b;
+  font-size: 19px;
+}
+
+.mrr-section p {
+  margin: 10px 0;
+}
+
+.mrr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.mrr-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 14px;
+  background: #f4f8fb;
+  border: 1px solid #e3ebf1;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.mrr-grid span,
+.mrr-prediction span {
+  font-size: 12px;
+  color: #65778a;
+}
+
+.mrr-grid strong {
+  font-size: 14px;
+}
+
+.mrr-prediction {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 14px;
+  padding: 18px;
+  border-radius: 12px;
+  background: #f3f7fa;
+}
+
+.mrr-prediction strong {
+  font-size: 24px;
+}
+
+.mrr-prediction.detected {
+  background: #fff3f0;
+  color: #a23f2d;
+}
+
+.mrr-prediction.not-detected {
+  background: #edf8f3;
+  color: #246f52;
+}
+
+.mrr-note {
+  padding: 12px 14px;
+  background: #f2f6f9;
+  border-left: 3px solid #8caabc;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.mrr-section li {
+  margin: 8px 0;
+}
+
+.mrr-topics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mrr-topics > div {
+  padding: 16px;
+  background: #f7fafc;
+  border: 1px solid #e3eaf0;
+  border-radius: 10px;
+}
+
+.mrr-topics h4 {
+  margin: 0 0 6px;
+  color: #234b61;
+}
+
+.mrr-topics p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.mrr-disclaimer {
+  margin-top: 24px;
+  padding: 18px;
+  background: #fff8e9;
+  border: 1px solid #f0dfb7;
+  border-radius: 12px;
+}
+
+.mrr-disclaimer p {
+  margin: 6px 0 0;
+}
+
+@media (max-width: 640px) {
+  .mold-research-report {
+    padding: 18px;
+  }
+
+  .mrr-grid,
+  .mrr-topics {
+    grid-template-columns: 1fr;
+  }
+
+  .mrr-header h2 {
+    font-size: 21px;
+  }
+}

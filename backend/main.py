@@ -1,3 +1,9 @@
+from backend.auth_middleware import require_prediction_auth
+from backend.auth_router import router as auth_router
+from backend.tomato_mat_api import router as tomato_mat_router
+from backend.papaya_hsi_api import router as papaya_hsi_router
+from backend.tomato_spectral_api import router as tomato_spectral_router
+from backend.strawberry_sensor_api import router as strawberry_sensor_router
 
 from pathlib import Path
 from uuid import uuid4
@@ -5,6 +11,11 @@ import json
 import subprocess
 import sys
 
+from fastapi import Request
+from backend.database import SessionLocal
+from backend.analysis_history_service import save_analysis_history
+from backend.food_guidance import get_food_guidance
+from backend.rgb_mold_report import generate_rgb_mold_report
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -20,6 +31,7 @@ from backend.rgb_freshness_inference import (
 )
 from backend.hsi_nitrogen_router import router as hsi_nitrogen_router
 from backend.hsi_nitrogen_upload_router import router as hsi_nitrogen_upload_router
+from backend.analysis_history_router import router as analysis_history_router
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 INFERENCE_SCRIPT = (
@@ -40,13 +52,19 @@ app = FastAPI(
     description="RGB, hyperspectral and multispectral analysis API",
     version="0.1.0",
 )
+
+app.include_router(analysis_history_router)
 app.include_router(hsi_nitrogen_router)
 app.include_router(hsi_nitrogen_upload_router)
+app.include_router(strawberry_sensor_router)
+app.include_router(tomato_spectral_router)
+app.include_router(tomato_mat_router)
+app.include_router(papaya_hsi_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:5173"],
     allow_credentials=False,
-    allow_methods=["GET", "POST"],
+    allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["*"],
 )
 
@@ -242,6 +260,7 @@ async def predict_pistachio(
 
 @app.post("/predict/rgb/mold")
 async def predict_mold_rgb(
+    request: Request,
     image: UploadFile = File(...)
 ):
     """
@@ -311,6 +330,7 @@ async def predict_mold_rgb(
         # Run the trained MobileNetV2 model.
         try:
             prediction = predict_rgb_mold(image_path)
+            research_report = generate_rgb_mold_report(prediction)
 
         except Exception as error:
             print("RGB mold inference failed:", repr(error))
@@ -320,13 +340,32 @@ async def predict_mold_rgb(
                 detail="RGB mold inference failed. Check server logs."
             )
 
-        return JSONResponse({
+        response_data = {
             "request_id": request_id,
             "module": "rgb_mold",
             "status": "completed",
             "result": prediction,
-            "warning": prediction["warning"]
-        })
+            "research_report": research_report,
+            "warning": prediction["warning"],
+        }
+
+        try:
+            with SessionLocal() as history_db:
+                save_analysis_history(
+                    db=history_db,
+                    user_id=request.state.user_id,
+                    module="rgb",
+                    analysis_type="mold_detection",
+                    food_name=prediction.get("food", "Unknown"),
+                    result=response_data,
+                )
+        except Exception:
+            import logging
+            logging.getLogger(__name__).exception(
+                "RGB mold history saving failed"
+            )
+
+        return JSONResponse(response_data)
 
     finally:
         await image.close()
@@ -344,6 +383,7 @@ async def predict_mold_rgb(
 
 @app.post("/predict/rgb/freshness")
 async def predict_rgb_freshness_endpoint(
+    request: Request,
     image: UploadFile = File(...)
 ):
     request_id = str(uuid4())
@@ -397,13 +437,37 @@ async def predict_rgb_freshness_endpoint(
             image_path
         )
 
-        return {
+        guidance = get_food_guidance(
+            prediction["food"],
+            prediction["freshness"]
+        )
+
+        response_data = {
             "request_id": request_id,
             "module": "rgb_freshness",
             "status": "completed",
             "result": prediction,
-            "warning": prediction["warning"]
+            "guidance": guidance,
+            "warning": prediction["warning"],
         }
+
+        try:
+            with SessionLocal() as history_db:
+                save_analysis_history(
+                    db=history_db,
+                    user_id=request.state.user_id,
+                    module="rgb",
+                    analysis_type="freshness",
+                    food_name=prediction.get("food", "Unknown"),
+                    result=response_data,
+                )
+        except Exception:
+            import logging
+            logging.getLogger(__name__).exception(
+                "RGB freshness history saving failed"
+            )
+
+        return response_data
 
     except HTTPException:
         raise
@@ -426,3 +490,7 @@ async def predict_rgb_freshness_endpoint(
                 image_path.parent,
                 ignore_errors=True
             )
+
+app.include_router(auth_router)
+
+app.middleware('http')(require_prediction_auth)

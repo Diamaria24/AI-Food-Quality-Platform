@@ -142,3 +142,48 @@ experiments/rgb_mold/mobilemold_experiment1/
 # Frontend Backup Files
 # ==========================================
 frontend/src/App.backup*.txt
+# Local authentication database
+/instance/*.db
+/instance/*.db-journal
+/instance/*.db-wal
+/instance/*.db-shm
+
+
+# ==========================================
+# Development Backup Files
+# ==========================================
+*.backup_*
+*.backup
+
+# ==========================================
+# Development Audit Reports
+# ==========================================
+*_audit.txt
+
+# ==========================================
+# Local Graph Archives
+# ==========================================
+/SpectraGuard_Existing_Graphs.zip
+
+# ==========================================
+# Local Database Files
+# ==========================================
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Additional Environment Variables
+# ==========================================
+.env.*
+!.env.example
+!.env.template
+
+# ==========================================
+# Additional Frontend Dependencies
+# ==========================================
+node_modules/
+
